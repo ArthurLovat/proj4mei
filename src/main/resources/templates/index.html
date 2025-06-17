@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>4MEI</title>
+  <link rel="stylesheet" href="static/Style/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">4MEI</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#Sobre">Sobre</a>
+      <a href="#">Serviços</a>
+      <a href="#">Contato</a>
+    </nav>
+    <a href="Calculo.html" class="btn-signup">Calcular</a>
+  </header>
+
+  <div class="main">
+    <div class="main-left">
+      <h1>4MEI</h1>
+      <p class="sub">Quem somos nós?</p>
+      <p>Somos uma plataforma especializada em ajudar Microempreendedores Individuais (MEIs) a entender e calcular seu ponto de equilíbrio financeiro, facilitando decisões estratégicas para o crescimento sustentável do seu negócio.</p>
+      <a href="#SB" class="btn-SM">Saiba mais</a>
+    </div>
+    <div class="hero-right">
+      <img src="IMGs/undraw_statistic-chart_6s7z.svg" alt="Ilustração" />
+    </div>
+  </div>
+
+  <div id="SB" class="wraper">
+  
+    <div class="card">
+      <div class="logo">
+        <img src="IMGS/ferramenta-de-reparacao.png" alt="">
+      </div>
+
+      <div class="title">
+        <h2>Como funciona nosso site?</h2>
+      </div>
+      <div class="desc"  id="#Sobre">
+        <p>Você informa seus custos fixos, variáveis e o preço dos seus produtos ou serviços. Com esses dados, calculamos automaticamente o ponto de equilíbrio: o valor mínimo que você precisa faturar para não ter prejuízo.</p>
+      </div>
+    </div>
+    <div class="card">  
+      <div class="logo">
+        <img src="IMGS/publico.png" alt="">
+      </div>
+
+      <div class="title">
+        <h2>Qual o público-alvo?</h2>
+      </div>
+      <div class="desc">
+        <p>Nosso serviço é voltado especialmente para MEIs que desejam ter maior controle sobre suas finanças e tomar decisões baseadas em dados concretos para garantir a viabilidade do seu negócio.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="logo">
+        <img src="IMGS/math.png" alt="">
+      </div>
+
+      <div class="title">
+        <h2>O que é ponto de equilíbrio?</h2>
+      </div>
+      <div class="desc">
+        <p>O ponto de equilíbrio é o momento em que as receitas de um negócio igualam seus custos totais. Saber esse valor ajuda a entender quanto você precisa vender para começar a ter lucro, evitando prejuízos.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <section class="faq-section">
+    <div class="faq-container">
+      <div class="faq-image">
+        <img src="IMGS/undraw_questions_g2px.svg" alt="Ilustração dúvidas" />
+      </div>
+      <div class="faq-content">
+        <h2>Perguntas Frequentes</h2>
+  
+        <div class="faq-item">
+          <button class="faq-question">O que é ponto de equilíbrio?</button>
+          <div class="faq-answer">
+            <p>É o valor mínimo que você precisa faturar para cobrir todos os seus custos, sem prejuízo nem lucro.</p>
+          </div>
+        </div>
+  
+        <div class="faq-item">
+          <button class="faq-question">Quem pode usar a 4MEI?</button>
+          <div class="faq-answer">
+            <p>Microempreendedores Individuais (MEIs) que querem controlar suas finanças e crescer com mais segurança.</p>
+          </div>
+        </div>
+  
+        <div class="faq-item">
+          <button class="faq-question">Preciso pagar para usar?</button>
+          <div class="faq-answer">
+            <p>Não. Nossa plataforma é gratuita para que todos os MEIs possam acessar cálculos essenciais.</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+  <footer>
+    <div class="contato">
+      <h2>Contato</h2>
+      <p>Email: contato@4mei.com.br</p>
+      <p>Telefone: (54) 9999-9999</p>
+      <p>Instagram: @4mei_oficial</p>
+    </div>
+
+    <div class="ajuda">
+      <h2>Suporte</h2>
+      <a href="">Suporte</a>
+      <a href="">SAC</a>
+      <a href="">Saiba Mais</a>
+    </div>
+
+    <div class="att">
+      <h2>Última Atualização</h2>
+      <p>03/06/2025</p>
+    </div>
+  </footer>
+
+
+
+
+  <script>
+    const questions = document.querySelectorAll(".faq-question");
+  
+    questions.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const answer = btn.nextElementSibling;
+        btn.classList.toggle("active");
+  
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>

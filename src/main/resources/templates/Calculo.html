@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculo.css">
+    <title>Cáculo</title>
+</head>
+<body>
+    <header>
+      <div class="logo">4MEI</div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="Sobre.html">Sobre</a>
+          <a href="#">Serviços</a>
+          <a href="Contato.html">Contato</a>
+        </nav>
+
+  </header>
+  <div class="divTela" >
+    <div class="primeira">
+      <form class="form">
+              <legend class="legend">Dados da Produção do Produto</legend>
+          <label for="">Custo:</label><br>
+          <input type="number" name="" id="custo" placeholder="Digite o Custo do Produto" required><br>
+
+          <label for="">Quantidade Vendida no mês:</label><br>
+          <input type="number" name="" id="QV" placeholder="Digite a Quantidade Vendida" required><br>
+
+          <label for="">Custo Fixo:</label><br>
+          <input type="number" name="" id="custoF" placeholder="Digite Seu Custo Mensal Fixo" required><br>
+
+
+          <button id="btn" class="button">Calcular</button>
+    </div>
+    <div class="segunda" >
+            <legend class="legend">Ponto de Equilibrio</legend>
+          <label for="">Preço mínimo do produto:</label>
+         <p id="resultado"></p>
+
+          <script>
+            const custo = document.getElementById("custo");
+            const quant = document.getElementById("QV");
+            const custoF = document.getElementById("custoF");
+            const p = document.getElementById("para");
+            const btn = document.getElementById("btn");
+          
+            btn.addEventListener("click", function(event) {
+              event.preventDefault(); // Impede o recarregamento da página
+          
+              const custoUnit = parseFloat(custo.value);
+              const quantidade = parseInt(quant.value);
+              const custoFix = parseFloat(custoF.value);
+          
+              if (isNaN(custoUnit) || isNaN(quantidade) || isNaN(custoFix)) {
+                p.textContent = "Preencha todos os campos corretamente.";
+                return;
+              }
+              
+              // preçoUnit = (valorEsp+salario)/quantProduz)+custoUnit
+              const valorEsp = (custoUnit*quantidade)+custoFix
+              const preco = (valorEsp/quantidade) ; // Simples soma como exemplo
+
+              
+              const result = document.getElementById("resultado")
+              result.textContent = "R$ "+preco.toFixed(2)
+
+
+            });
+          </script>
+          
+          
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

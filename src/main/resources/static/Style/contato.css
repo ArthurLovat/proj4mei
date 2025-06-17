@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    background-image: url(IMGS/Design\ sem\ nome.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2e2f55;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #5a2ecd;
+}
+
+.btn-signup {
+    padding: 12px 24px;
+    background: #0077B6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contatDestaque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    margin-top: 4%;
+    text-align: center;
+    max-width: 700px;
+
+}
+
+.content h1 {
+    font-size: 46px;
+    word-spacing: 8px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 18px;
+    word-spacing: 3px;
+}
+
+#destaque {
+    color: #5a2ecd;
+}
+.contactMain {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 60px 10%;
+    flex-wrap: wrap;
+}
+
+.leftContent {
+    max-width: 500px;
+    text-align: left;
+    color: black;
+}
+
+.leftContent img {
+    width: 400px;
+    height: 400px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.info{
+    max-width: 400px;
+    border-top: 1px solid rgb(249, 214, 214);
+    margin-left: 25px;
+}
+.leftContent .info p {
+    font-size: 16px;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+.contactForm {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+form input{
+    background-color: rgb(243, 230, 230);
+}
+form input,
+form textarea {
+    background-color: rgb(243, 230, 230);
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #0077B6;
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.3);
+}
+
+form textarea {
+    resize: none;
+    height: 100px;
+}
+
+form button {
+    padding: 14px;
+    background: linear-gradient(to right, #0077B6, #ADE8F4);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    opacity: 0.9;
+}
+
+.privacy-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
