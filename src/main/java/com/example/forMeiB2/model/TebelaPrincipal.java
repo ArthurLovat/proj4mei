@@ -14,6 +14,7 @@ public class TebelaPrincipal {
     private double custoFixo;
     private double custoUnit;
     private double precoVenda;
+    private double pe;
     private double quant;
 
     // Getters e Setters
@@ -31,4 +32,7 @@ public class TebelaPrincipal {
 
     public double getQuant() { return quant; }
     public void setQuant(double quant) { this.quant = quant; }
+
+    public double getPe() { return pe; }
+    public void setPe(double pe) { this.pe = pe; }
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <div th:fragment="header">
+        <header>
+            <div class="logo">4MEI</div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="#Sobre">Sobre</a>
+                <a href="/ponto">Ponto de Equilibrio</a>
+                <a href="/contato">Contato</a>
+            </nav>
+            <a href="/calculo" class="btn-signup">Calcular</a>
+        </header>
+    </div>
+
+    <div th:fragment="footer"> <link rel="stylesheet" th:href="@{/Style/style.css}" />
+        <footer>
+            <div class="contato">
+                <h2>Contato</h2>
+                <p>Email: contato@4mei.com.br</p>
+                <p>Telefone: (54) 9999-9999</p>
+                <p>Instagram: @4mei_oficial</p>
+            </div>
+
+            <div class="ajuda">
+                <h2>Suporte</h2>
+                <a href="">Suporte</a>
+                <a href="">SAC</a>
+                <a href="">Saiba Mais</a>
+            </div>
+
+            <div class="att">
+                <h2>Última Atualização</h2>
+                <p>03/06/2025</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

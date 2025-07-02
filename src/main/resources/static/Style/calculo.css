@@ -1,151 +1,286 @@
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Fonte base */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f3f7ff;
-    color: #333;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f3f7ff;
+  color: #333;
 }
 
+/* ================= Header ================= */
+/* ATENÇÃO: Se o seu header estiver em um fragmento, esses estilos devem estar no CSS que o fragmento usa,
+   ou em um CSS global. Adapte conforme a sua estrutura de arquivos. */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 80px;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 80px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #5a2ecd;
+  font-size: 24px;
+  font-weight: 700;
+  color: #5a2ecd;
 }
 
 nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #5a2ecd;
-    text-decoration: underline;
+  color: #a153f7; /* Cor de hover do gradiente */
+  text-decoration: underline;
 }
 
 .btn-signup {
-    padding: 10px 20px;
-    background: linear-gradient(to right, #a153f7, #48cae4);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s ease;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #a153f7, #48cae4);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
 }
 
 .btn-signup:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
-
-.button{
-    padding: 10px 20px;
-    background: linear-gradient(to right, #a153f7, #48cae4);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-.button:hover {
-    opacity: 0.75;
+/* ================= Linha do Tempo ================= */
+.linha-do-tempo {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
 }
 
-
-
-legend{
-    text-align: center;
-    margin-bottom: 10px;
+.linha-do-tempo h1 {
+  color: #5a2ecd;
+  font-size: 2em;
+  margin-bottom: 60px;
 }
 
-.divTela{
-    margin-top: 105px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 0;
 }
 
-.primeira{
-    padding: 8px;
-    font-family: 'Times New Roman', Times, serif;
-    align-items: center;
-    font-size: 20px;
-    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    margin: auto;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    height: 400px;
-    width: 400px;
-}
-.primeira input{
-    border-radius: 10px;
-}
-.segunda input{
-    border-radius: 10px;
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  background: #48cae4; /* Cor da linha central, pegando do gradiente do cabeçalho */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
 }
 
-.primeira:hover{
-    opacity: 0.85;
+.timeline-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px;
 }
-.segunda{
-    padding: 8px;
-    font-family: 'Times New Roman', Times, serif;
-    align-items: center;
-    font-size: 20px;
-    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
-    margin: auto;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    height: 400px;
-    width: 400px;
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  background-color: #a153f7; /* Cor dos círculos, pegando do gradiente do cabeçalho */
+  border-radius: 50%;
+  z-index: 1;
 }
-.segunda:hover{
-    opacity: 0.85;
+
+.timeline-item .content,
+.timeline-item .imagem {
+  width: 40%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-input {
-    text-align: center;
+
+/* Cores dos cards da linha do tempo: azuis do cabeçalho */
+.timeline-item.esquerda .content,
+.timeline-item.direita .imagem {
+    background: #e0f2f7; /* Azul bem claro, quase branco, para alternar */
+}
+
+.timeline-item.esquerda .imagem,
+.timeline-item.direita .content {
+    background: #c5eff7; /* Um tom um pouco mais escuro de azul claro para alternar */
+}
+
+.timeline-item .imagem img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.timeline-item.esquerda {
+  flex-direction: row;
+}
+
+.timeline-item.direita {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 8px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+  }
+
+  .timeline-item::before {
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .timeline-item .content,
+  .timeline-item .imagem {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  /* Garante que a ordem se mantenha em dispositivos menores */
+  .timeline-item.esquerda .content { order: 1; }
+  .timeline-item.esquerda .imagem { order: 2; }
+  .timeline-item.direita .content { order: 2; }
+  .timeline-item.direita .imagem { order: 1; }
 }
-label{
-    padding: 10px;
+/* ================= Container do Formulário ================= */
+.container-principal {
+  background-color: #f8fbff;
+  padding: 40px 20px;
 }
-#CF{
-    margin-bottom: 25px;
+
+.container-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
+
+.formulario { /* Nome da classe alterado de 'form' para 'formulario' para corresponder ao novo HTML */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* ================= Cards ================= */
+.card {
+  background-color: white; /* Cards do formulário em branco */
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: transform 0.3s ease;
+  width: 50vh;
+  border: 1px solid #e0f2f7; /* Borda sutil com cor do tema */
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+legend {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #5a2ecd;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ================= Inputs e Botões ================= */
+label {
+  font-weight: 500;
+  display: block;
+  margin-top: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c5eff7; /* Borda do input com cor do tema */
+  border-radius: 8px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #a153f7, #48cae4); /* Gradiente do cabeçalho */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+/* ================= Resultado ================= */
 #resultado {
-    padding-top: 5px;
-    border: solid 1px #ccc;
-    text-align: center;
-    background-color: white;
-    max-height: 32.5px;
-    border-radius: 10px;
-    height: 32.5px;
+  background-color: #f0f8ff; /* Um azul quase branco para o resultado */
+  border: 1px solid #c5eff7; /* Borda para destaque */
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* ================= Imagem Ilustrativa ================= */
+.ilustracao {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed #c5eff7; /* Borda com cor do tema */
+  border-radius: 10px;
+  text-align: center;
+}
+
+.placeholder-text {
+  color: #888; /* Tom mais escuro para o texto placeholder */
+  font-size: 14px;
+}
+
+/* ================= Footer ================= */
+/* ATENÇÃO: Se o seu footer estiver em um fragmento, esses estilos devem estar no CSS que o fragmento usa,
+   ou em um CSS global. Adapte conforme a sua estrutura de arquivos. */
+footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  color: #777;
 }

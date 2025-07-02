@@ -5,20 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="contato.css">
+  <link rel="stylesheet" href="Style\contato.css">
 </head>
 
+<div th:insert="fragments :: header"></div>
+
 <body>
-  <header>
-    <div class="logo">4MEI</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#Sobre">Sobre</a>
-      <a href="#">Serviços</a>
-      <a href="#">Contato</a>
-    </nav>
-    <a href="Calculo.html" class="btn-signup">Calcular</a>
-  </header>
+
   <div class="contatDestaque">
     <div class="content">
       <h1>Tem alguma pergunta?</h1>
@@ -51,11 +44,7 @@
     </div>
   </div>
 
-
-
-
-
-
+  <div th:insert="fragments :: footer"></div>
 
 </body>
 
