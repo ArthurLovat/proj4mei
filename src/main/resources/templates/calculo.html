@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo do Preço</title>
+  <link rel="stylesheet" th:href="@{/Style/calculo.css}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div th:insert="fragments :: header"></div>
+
+
+  <main class="container-principal">
+    <div class="container-box">
+      <form th:action="@{/calcular}" th:object="${tabela}" method="post" class="formulario">
+        <section class="card primeira">
+          <legend>Dados da Produção</legend>
+
+          <label for="custo">Custo Unitário:</label>
+          <input type="number" id="custo" th:field="*{custoUnit}" placeholder="Ex: 15.50" required>
+
+          <label for="quant">Quantidade Vendida no mês:</label>
+          <input type="number" id="quant" th:field="*{quant}" placeholder="Ex: 300" required>
+
+          <label for="custoFixo">Custo Fixo:</label>
+          <input type="number" id="custoFixo" th:field="*{custoFixo}" placeholder="Ex: 1000" required>
+
+          <button type="submit" class="button">Calcular</button>
+        </section>
+
+        <section class="card segunda">
+          <legend>Resultado</legend>
+
+          <label>Preço mínimo do produto:</label>
+          <div id="resultado" th:if="${tabela.precoVenda}" th:text="${'R$ ' + #numbers.formatDecimal(tabela.precoVenda, 0, 'COMMA', 2, 'POINT')}">R$ 0,00</div>
+          <div id="resultado" th:unless="${tabela.precoVenda}">R$ 0,00</div>
+
+
+          <div class="ilustracao">
+            <p class="placeholder-text">Imagem ou gráfico ilustrativo aqui</p>
+          </div>
+        </section>
+      </form>
+    </div>
+  </main>
+
+
+
+
+
+  <section class="linha-do-tempo">
+    <h1>Vamos aprender o preço do seu produto</h1>
+    <div class="timeline">
+
+      <div class="timeline-item esquerda">
+        <div class="content">
+          <h2>1. Custo Unitário</h2>
+          <p>É quanto custa para produzir uma única unidade do seu produto.</p>
+        </div>
+        <div class="imagem">
+          <img src="https://via.placeholder.com/150" alt="Custo unitário">
+        </div>
+      </div>
+
+      <div class="timeline-item direita">
+        <div class="content">
+          <h2>2. Quantidade Vendida</h2>
+          <p>É o total de unidades que você vende em média por mês.</p>
+        </div>
+        <div class="imagem">
+          <img src="https://via.placeholder.com/150" alt="Quantidade vendida">
+        </div>
+      </div>
+
+      <div class="timeline-item esquerda">
+        <div class="content">
+          <h2>3. Custo Fixo</h2>
+          <p>Gastos mensais fixos como aluguel, internet, energia, etc.</p>
+        </div>
+        <div class="imagem">
+          <img src="https://via.placeholder.com/150" alt="Custo fixo">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <div th:insert="fragments :: footer"></div>
+
+</body>
+
+</html>
